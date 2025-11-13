@@ -4,6 +4,7 @@ import 'package:portfolio_website/core/constants/app_enum.dart';
 import 'package:portfolio_website/core/constants/app_sizes.dart';
 
 import '../widgets/desktop_top_nav_bar_widget.dart';
+import '../widgets/main_dashboard_widget.dart';
 import '../widgets/mobile_top_nav_bar_widget.dart';
 
 class HomeScreenPage extends StatefulWidget {
@@ -60,6 +61,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                   scaffoldKey.currentState?.openEndDrawer();
                 },
               ),
+            MainDashboardWidget(),
             Container(
               height: 500,
               width: double.infinity,

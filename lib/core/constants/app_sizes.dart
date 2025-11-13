@@ -4,7 +4,9 @@ class AppSizes {
   static const bodyPadding = 16.0;
   static const insidePadding = 10.0;
   static const desktopSize = 600.0;
-  
+  static Size screenSize(BuildContext context) {
+    return MediaQuery.of(context).size;
+  }  
   static const radiusSmall = 8.0;
   static const radiusMedium = 12.0;
   static const radiusLarge = 20.0;
