@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class AppSizes {
   static const bodyPadding = 16.0;
   static const insidePadding = 10.0;
-  static const desktopSize = 600.0;
+  static const desktopMinSize = 600.0;
+    static const desktopMediumSize = 800.0;
+
   static Size screenSize(BuildContext context) {
     return MediaQuery.of(context).size;
   }  

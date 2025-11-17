@@ -8,6 +8,7 @@ import '../widgets/desktop_top_nav_bar_widget.dart';
 import '../widgets/main_dashboard_desktop_widget.dart';
 import '../widgets/main_dashboard_mobile_widget.dart';
 import '../widgets/mobile_top_nav_bar_widget.dart';
+import '../widgets/skill_mobile.dart';
 
 class HomeScreenPage extends StatefulWidget {
   const HomeScreenPage({super.key});
@@ -27,7 +28,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
       builder: (context, constraints) => Scaffold(
         backgroundColor: AppColors.scaffoldBg,
         key: scaffoldKey,
-        endDrawer: constraints.maxWidth >= AppSizes.desktopSize
+        endDrawer: constraints.maxWidth >= AppSizes.desktopMinSize
             ? null
             : Drawer(
                 backgroundColor: AppColors.scaffoldBg,
@@ -57,7 +58,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
           scrollDirection: Axis.vertical,
           children: [
             //top nav button
-            if (constraints.maxWidth >= AppSizes.desktopSize)
+            if (constraints.maxWidth >= AppSizes.desktopMinSize)
               DesktopTopNavBarWidget()
             else
               MobileTopNavBarWidget(
@@ -66,13 +67,16 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                 },
               ),
 
-            if (constraints.maxWidth >= AppSizes.desktopSize)
+            if (constraints.maxWidth >= AppSizes.desktopMinSize)
               MainDashboardDesktopWidget()
             else
               MainDashboardMobileWidget(),
 
             //skill
-SkillDesktop(screenWidth: screenWidth),
+            if (constraints.maxWidth >= AppSizes.desktopMediumSize)
+              SkillDesktop(screenWidth: screenWidth)
+            else
+              SkillMobile(screenWidth: screenWidth),
             Container(height: 500, width: double.infinity),
             Container(
               height: 500,
