@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_website/core/constants/app_colors.dart';
 import 'package:portfolio_website/core/constants/app_enum.dart';
 import 'package:portfolio_website/core/constants/app_sizes.dart';
+import 'package:portfolio_website/features/home_screen/widgets/skill_desktop.dart';
 
 import '../widgets/desktop_top_nav_bar_widget.dart';
 import '../widgets/main_dashboard_desktop_widget.dart';
@@ -20,6 +21,8 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
     return LayoutBuilder(
       builder: (context, constraints) => Scaffold(
         backgroundColor: AppColors.scaffoldBg,
@@ -67,11 +70,9 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
               MainDashboardDesktopWidget()
             else
               MainDashboardMobileWidget(),
-            Container(
-              height: 500,
-              width: double.infinity,
-              color: Colors.blueGrey,
-            ),
+
+            //skill
+SkillDesktop(screenWidth: screenWidth),
             Container(height: 500, width: double.infinity),
             Container(
               height: 500,
