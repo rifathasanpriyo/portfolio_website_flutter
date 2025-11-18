@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/core/constants/app_colors.dart';
 import 'package:portfolio_website/core/constants/app_enum.dart';
@@ -41,31 +40,31 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                   child: ListView(
                     controller: scrollController,
                     scrollDirection: Axis.vertical,
-                    
-                      children: [
-                        Align(
-                          alignment: AlignmentGeometry.centerLeft,
-                          child: IconButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            icon: Icon(Icons.close),
-                          ),
+
+                    children: [
+                      Align(
+                        alignment: AlignmentGeometry.centerLeft,
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: Icon(Icons.close),
                         ),
-                        for (int i = 0; i < navItemIcon.length; i++)
-                          ListTile(
-                            onTap: () {
-                              scaffoldKey.currentState?.closeEndDrawer();
-                              scrollToSection(i);
-                            },
-                            leading: Icon(navItemIcon[i]),
-                            title: Text(navItemList[i]),
-                          ),
-                      ],
-                    ),
+                      ),
+                      for (int i = 0; i < navItemIcon.length; i++)
+                        ListTile(
+                          onTap: () {
+                            scaffoldKey.currentState?.closeEndDrawer();
+                            scrollToSection(i);
+                          },
+                          leading: Icon(navItemIcon[i]),
+                          title: Text(navItemList[i]),
+                        ),
+                    ],
                   ),
                 ),
-           
+              ),
+
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           controller: scrollController,
@@ -85,21 +84,25 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                     scaffoldKey.currentState?.openEndDrawer();
                   },
                 ),
-          
+
               if (constraints.maxWidth >= AppSizes.desktopMinSize)
-                MainDashboardDesktopWidget()
+                MainDashboardDesktopWidget(
+                  onHireMeTap: () => scrollToSection(3),
+                )
               else
-                MainDashboardMobileWidget(),
-          
+                MainDashboardMobileWidget(
+                  onHireMeTap: () => scrollToSection(3),
+                ),
+
               //skill
               if (constraints.maxWidth >= AppSizes.desktopMediumSize)
                 SkillDesktop(screenWidth: screenWidth, key: navKeys[1])
               else
                 SkillMobile(screenWidth: screenWidth, key: navKeys[1]),
-          
+
               //project
               ProjectsSection(screenWidth: screenWidth, key: navKeys[2]),
-              ContactMeWidget(screenWidth: screenWidth, key: navKeys[3]),
+              ContactMeWidget(screenWidth: screenWidth, key: navKeys[3],maxWidth: constraints.maxWidth,),
             ],
           ),
         ),

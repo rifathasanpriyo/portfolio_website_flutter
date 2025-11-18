@@ -6,7 +6,9 @@ import '../../../core/constants/app_sizes.dart';
 import '../../../core/constants/app_url_launch.dart';
 
 class MainDashboardDesktopWidget extends StatelessWidget {
-  const MainDashboardDesktopWidget({super.key});
+  final VoidCallback onHireMeTap;
+
+  const MainDashboardDesktopWidget({super.key, required this.onHireMeTap});
 
   @override
   Widget build(BuildContext context) {
@@ -86,21 +88,24 @@ class MainDashboardDesktopWidget extends StatelessWidget {
               // ),
               Row(
                 children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: AppSizes.bodyPadding * 2,
-                      vertical: AppSizes.insidePadding / 2,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.yellowPrimary,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Text(
-                      "Hire Me",
-                      style: TextStyle(
-                        color: AppColors.whitePrimary,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                  InkWell(
+                onTap: onHireMeTap,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: AppSizes.bodyPadding * 2,
+                        vertical: AppSizes.insidePadding / 2,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.yellowPrimary,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "Hire Me",
+                        style: TextStyle(
+                          color: AppColors.whitePrimary,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                   ),

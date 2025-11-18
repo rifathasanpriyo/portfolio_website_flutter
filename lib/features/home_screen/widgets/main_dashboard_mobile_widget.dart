@@ -8,7 +8,9 @@ import '../../../core/constants/app_url.dart';
 import '../../../core/constants/app_url_launch.dart';
 
 class MainDashboardMobileWidget extends StatelessWidget {
-  const MainDashboardMobileWidget({super.key});
+    final VoidCallback onHireMeTap;
+
+  const MainDashboardMobileWidget({super.key, required this.onHireMeTap});
 
   @override
   Widget build(BuildContext context) {
@@ -81,21 +83,24 @@ class MainDashboardMobileWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppSizes.bodyPadding * 2,
-                  vertical: AppSizes.insidePadding / 2,
-                ),
-                decoration: BoxDecoration(
-                  color: AppColors.yellowPrimary,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Text(
-                  "Hire Me",
-                  style: TextStyle(
-                    color: AppColors.whitePrimary,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
+              InkWell(
+                onTap: onHireMeTap,
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: AppSizes.bodyPadding * 2,
+                    vertical: AppSizes.insidePadding / 2,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.yellowPrimary,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(
+                    "Hire Me",
+                    style: TextStyle(
+                      color: AppColors.whitePrimary,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ),

@@ -24,6 +24,7 @@ class CustomInputField extends StatelessWidget {
       validator: validator,
       keyboardType: keyboardType,
       maxLines: maxLines,
+
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: const TextStyle(color: Colors.black54),
