@@ -14,7 +14,7 @@ class SkillDesktop extends StatelessWidget {
       width: screenWidth,
       padding: EdgeInsets.symmetric(
         horizontal: AppSizes.insidePadding,
-        vertical: AppSizes.insidePadding,
+        vertical: AppSizes.insidePadding * 5,
       ),
       color: AppColors.bgLight1,
 
@@ -37,6 +37,9 @@ class SkillDesktop extends StatelessWidget {
                   children: [
                     for (int i = 0; i < platformItems.length; i++)
                       Container(
+                        padding: EdgeInsets.symmetric(
+                          vertical: AppSizes.insidePadding / 2,
+                        ),
                         width: 200,
                         decoration: BoxDecoration(
                           color: AppColors.bgLight2,

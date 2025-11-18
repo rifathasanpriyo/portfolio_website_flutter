@@ -33,8 +33,6 @@ class SkillMobile extends StatelessWidget {
               SizedBox(height: AppSizes.bodyPadding),
 
               // Fixed accidental width
-              SizedBox(height: AppSizes.insidePadding * 2),
-
               for (int i = 0; i < platformItems.length; i++)
                 Container(
                   margin: EdgeInsets.symmetric(
@@ -49,7 +47,7 @@ class SkillMobile extends StatelessWidget {
                     title: Text(platformItems[i]["title"]),
                   ),
                 ),
-              SizedBox(height: AppSizes.insidePadding),
+              SizedBox(height: AppSizes.bodyPadding),
 
               Wrap(
                 spacing: 10,

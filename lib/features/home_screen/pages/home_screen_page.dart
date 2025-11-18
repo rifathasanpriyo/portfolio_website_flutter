@@ -4,6 +4,10 @@ import 'package:portfolio_website/core/constants/app_enum.dart';
 import 'package:portfolio_website/core/constants/app_sizes.dart';
 import 'package:portfolio_website/features/home_screen/widgets/skill_desktop.dart';
 
+import '../../../core/constants/app_input.dart';
+import '../../../core/constants/app_url.dart';
+import '../../../core/constants/app_url_launch.dart';
+import '../widgets/contact_me_widget.dart';
 import '../widgets/desktop_top_nav_bar_widget.dart';
 import '../widgets/main_dashboard_desktop_widget.dart';
 import '../widgets/main_dashboard_mobile_widget.dart';
@@ -80,70 +84,8 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
               SkillMobile(screenWidth: screenWidth),
 
             //project
-            ProjectsSection(screenWidth: screenWidth,),
-            // Container(
-            //   padding: EdgeInsets.symmetric(vertical: AppSizes.bodyPadding),
-            //   width: screenWidth,
-            //   child: Column(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     children: [
-            //       Text(
-            //         "Notable Projects",
-            //         style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
-            //       ),
-            //       Container(
-            //         // height: 280,
-            //         width: 250,
-            //         clipBehavior: Clip.antiAlias,
-            //         decoration: BoxDecoration(
-            //           color: AppColors.hintDark,
-            //           borderRadius: BorderRadius.circular(10),
-            //         ),
-            //         child: Column(
-            //           crossAxisAlignment: CrossAxisAlignment.start,
-            //           // mainAxisAlignment: MainAxisAlignment.start,
-            //           children: [
-            //             Image.asset(
-            //               "assets/skill/tovozo.png",
-            //               width: 300,
-            //               fit: BoxFit.cover,
-            //             ),
-
-            //             Padding(
-            //               padding: const EdgeInsets.all(8.0),
-            //               child: Column(
-            //                 crossAxisAlignment: CrossAxisAlignment.start,
-            //                 children: [
-            //                   Text(
-            //                     "Tovozo",
-            //                     style: TextStyle(
-            //                       fontSize: 20,
-            //                       fontWeight: FontWeight.w600,
-            //                       color: AppColors.whitePrimary,
-            //                     ),
-            //                   ),
-            //                   Text(
-            //                     "Live hotel location with Google Maps API, in-app messaging via WebSocket,push notifications, real-time job seeker tracking.",
-            //                     style: TextStyle(
-            //                       fontSize: 10,
-            //                       color: AppColors.whiteSecondary,
-            //                     ),
-            //                   ),
-            //                   SizedBox(height: AppSizes.insidePadding),
-            //                 ],
-            //               ),
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            Container(
-              height: 500,
-              width: double.infinity,
-              color: Colors.blueGrey,
-            ),
+            ProjectsSection(screenWidth: screenWidth),
+           ContactMeWidget(screenWidth: screenWidth,)
           ],
         ),
       ),

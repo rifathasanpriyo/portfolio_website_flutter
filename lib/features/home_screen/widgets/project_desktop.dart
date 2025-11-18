@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
+import '../../../core/constants/app_url_launch.dart';
 import '../data/models/project_model.dart';
 
 class ProjectsSection extends StatelessWidget {
@@ -8,17 +8,7 @@ class ProjectsSection extends StatelessWidget {
   const ProjectsSection({Key? key, required this.screenWidth})
     : super(key: key);
 
-  Future<void> _openInNewTab(BuildContext context, String url) async {
-    // Use url_launcher which supports opening in a new tab on web with webOnlyWindowName
-    try {
-      await launchUrlString(url, webOnlyWindowName: '_blank');
-    } catch (e) {
-      // fallback: show a snackbar if launch fails
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Could not open the link')));
-    }
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +32,7 @@ class ProjectsSection extends StatelessWidget {
               alignment: WrapAlignment.center,
               children: projects.map((proj) {
                 return GestureDetector(
-                  onTap: () => _openInNewTab(context, proj.url),
+                  onTap: () => openInNewTab(context, proj.url),
                   child: MouseRegion(
                     cursor: SystemMouseCursors.click,
                     child: Container(
