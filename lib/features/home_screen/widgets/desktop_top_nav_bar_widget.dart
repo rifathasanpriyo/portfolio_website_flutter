@@ -6,7 +6,9 @@ import '../../../core/constants/app_enum.dart';
 import '../../../core/constants/app_sizes.dart';
 
 class DesktopTopNavBarWidget extends StatefulWidget {
-  const DesktopTopNavBarWidget({super.key});
+    final Function(int) onNavMenuTap;
+
+  const DesktopTopNavBarWidget({super.key, required this.onNavMenuTap});
 
   @override
   State<DesktopTopNavBarWidget> createState() => _DesktopTopNavBarWidgetState();
@@ -40,7 +42,11 @@ class _DesktopTopNavBarWidgetState extends State<DesktopTopNavBarWidget> {
           Spacer(),
           for (int i = 0; i < navItemList.length; i++)
             TextButton(
-              onPressed: () {},
+              onPressed: () { 
+                    
+                  widget.onNavMenuTap(i);
+               
+              },
               child: Text(
                 navItemList[i],
                 style: TextStyle(

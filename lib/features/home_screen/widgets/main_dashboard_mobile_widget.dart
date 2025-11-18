@@ -148,6 +148,10 @@ class MainDashboardMobileWidget extends StatelessWidget {
             width: math.min(screenWidth * 0.6, 260), // responsive max width
             fit: BoxFit.contain,
           ),
+          SizedBox(height: AppSizes.insidePadding * 2),
+          SizedBox(height: AppSizes.insidePadding * 2),
+          SizedBox(height: AppSizes.insidePadding * 2),
+          SizedBox(height: AppSizes.insidePadding * 2),
         ],
       ),
     );

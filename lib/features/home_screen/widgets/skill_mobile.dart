@@ -6,7 +6,11 @@ import '../../../core/constants/app_sizes.dart';
 
 class SkillMobile extends StatelessWidget {
   final double screenWidth;
-  const SkillMobile({super.key, required this.screenWidth});
+
+  const SkillMobile({
+    super.key,
+    required this.screenWidth,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +39,9 @@ class SkillMobile extends StatelessWidget {
               // Fixed accidental width
               for (int i = 0; i < platformItems.length; i++)
                 Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: AppSizes.insidePadding,
+                  ),
                   margin: EdgeInsets.symmetric(
                     vertical: AppSizes.insidePadding / 3,
                   ),
@@ -47,7 +54,7 @@ class SkillMobile extends StatelessWidget {
                     title: Text(platformItems[i]["title"]),
                   ),
                 ),
-              SizedBox(height: AppSizes.bodyPadding),
+              SizedBox(height: AppSizes.bodyPadding * 2),
 
               Wrap(
                 spacing: 10,
@@ -65,6 +72,7 @@ class SkillMobile extends StatelessWidget {
                     ),
                 ],
               ),
+              SizedBox(height: AppSizes.bodyPadding * 2),
             ],
           ),
         ),

@@ -5,6 +5,7 @@ import '../data/models/project_model.dart';
 
 class ProjectsSection extends StatelessWidget {
   final double screenWidth;
+
   const ProjectsSection({Key? key, required this.screenWidth})
     : super(key: key);
 
