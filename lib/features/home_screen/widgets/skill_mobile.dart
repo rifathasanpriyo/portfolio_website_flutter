@@ -59,7 +59,6 @@ class SkillMobile extends StatelessWidget {
                   for (int i = 0; i < skillItems.length; i++)
                     Chip(
                       padding: EdgeInsets.symmetric(
-                        horizontal: AppSizes.insidePadding,
                         vertical: AppSizes.insidePadding,
                       ),
                       backgroundColor: AppColors.bgLight2,
